@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript</title>
+</head>
+<body>
+    <h1>Exercise 2</h1>
+    <h2>Military Greeting</h2>
+    <img src="pexels-photo.jpg">
+    <p>Please enter your name:</p><input id="nameInput" type="text" placeholder="enter your name"><br>
+    <p>Please enter your age:</p><input id="ageInput" type="number" placeholder="enter your age"><br>
+    <p>Please enter your rank:</p><input id="rankInput" type="text" placeholder="enter your rank"><br>
+    <button onclick="showResult()"> enter </button> <br>
+    <p id="Show1"style="color:green;
+    font-size: 20px;
+    font-weight: bold;"></p><br>
+    <script src="main.js">
+      let name = document.getElementById('nameInput');
+let age = document.getElementById('ageInput');
+let rank = document.getElementById('rankInput');
+let input2 = document.getElementById('Show1');
+
+function showResult()
+    {
+if(age.value < 18)
+{
+    input2.innerHTML='You are too young for the military.';
+}
+else if(name.value === 'Rugen' && rank.value === 'Count')
+    {
+    input2.innerHTML= 'My name is Inigo Motoya, you killed my father, prepare to die';
+}
+else if(rank.value ==='Captain')
+    {
+    input2.innerHTML= `Aye Aye Captain ${name.value}`;
+}
+else if(rank.value === 'Private' && age.value > 40)
+    {
+    input2.innerHTML= `What have you been doing with your life ${name.value} ?`;
+}
+else
+    {
+    input2.innerHTML= `Hello ${rank.value} ${name.value}, I cannot wait to celebrate your ${age.value + 1}th birthday next year!`;
+}
+
+}
+
+    </script>
+</body>
+</html>
